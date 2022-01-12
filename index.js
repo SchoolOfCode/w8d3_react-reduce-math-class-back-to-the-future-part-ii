@@ -14,7 +14,10 @@ that the variable sum is equal to the sum of the array. Use
 an initial value of zero after your reduce callback function. */
 
 export function add(numbers) {
-  //Your code here
+  function sum(acc, cur) {
+    return acc + cur;
+  } //Your code her
+  return numbers.reduce(sum, 0);
 }
 
 /* 👉 2. In addIfTwoDigits, use reduce to add up *only* the numbers 
