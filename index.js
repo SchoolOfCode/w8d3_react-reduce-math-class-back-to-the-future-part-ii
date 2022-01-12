@@ -14,17 +14,26 @@ that the variable sum is equal to the sum of the array. Use
 an initial value of zero after your reduce callback function. */
 
 export function add(numbers) {
-  function sum(acc, cur) {
-    return acc + cur;
-  } //Your code her
-  return numbers.reduce(sum, 0);
+   function sum(acc, cur) {
+      return acc + cur;
+   } //Your code her
+   return numbers.reduce(sum, 0);
 }
 
 /* 👉 2. In addIfTwoDigits, use reduce to add up *only* the numbers 
 that have exactly two digits. Return the sum.*/
 
+//check which numbers have two digits.
 export function addIfTwoDigits(numbers) {
-  //Your code here
+   const sumNum = numbers.reduce((acc, cur) => {
+      if (cur >= 10 && cur <= 99) {
+         return acc + cur;
+      } else {
+         return acc;
+      }
+   }, 0);
+
+   return sumNum;
 }
 
 /* 👉 3. In addWithDoubleOdds, use reduce to double the odd numbers 
@@ -32,7 +41,7 @@ in the array and then add up the array. The returned value should be
 the sum of the whole array with the odd numbers doubled.*/
 
 export function addWithDoubleOdds(numbers) {
-  //Your code here
+   //Your code here
 }
 
 /* 🌟 BONUS: 4. Reduce isn't just for numbers. In createObjectFromKeyValuePairs, 
@@ -48,7 +57,7 @@ For example:
 */
 
 export function createObjectFromKeyValuePairs(keyValuePairs) {
-  //Your code here
+   //Your code here
 }
 
 /* 🌟 BONUS: 5. In createTallyFromLetters, take in an array of letters and use reduce to 
@@ -60,7 +69,7 @@ For example:
   createTallyFromLetters(["c", "c", "c", "C"]) should return { c: 3, C: 1 }
 */
 export function createTallyFromLetters(letters) {
-  // Your code here
+   // Your code here
 }
 
 /* 🌟 BONUS: 6. In getMinAndMax, take in an array of numbers
@@ -79,5 +88,5 @@ The input array will always contain at least 1 number.
 (Math.min and Math.max do a similar job, but let's ignore that for now and use reduce instead.)
 */
 export function getMinAndMax(numbers) {
-  // Your code here
+   // Your code here
 }
